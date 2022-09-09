@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Create Order" icon-name="standard:orders">
+    <lightning-record-edit-form object-api-name="Order" onsuccess={handleOrderCreationSuccess}>
+        <lightning-input-field field-name="EffectiveDate"> </lightning-input-field>
+        <lightning-input-field field-name="Status"> </lightning-input-field>
+        <lightning-input-field field-name="AccountId" value={recordId} class="slds-hide"> </lightning-input-field>
+        <lightning-button type="submit" variant="brand" label="Create Order" onclick={saveOrder}></lightning-button>
+    </lightning-record-edit-form>
+    </lightning-card>
+</template>

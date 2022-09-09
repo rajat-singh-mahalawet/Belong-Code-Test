@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verify_Primary_Contact</fullName>
+    <active>true</active>
+    <errorConditionFormula>Primary_Contact__c &lt;&gt;  Account.Primary_Contact__c &amp;&amp;
+NOT( ISBLANK( Primary_Contact__c ) )</errorConditionFormula>
+    <errorDisplayField>Primary_Contact__c</errorDisplayField>
+    <errorMessage>Only Primary Contact Allowed</errorMessage>
+</ValidationRule>
