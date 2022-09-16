@@ -55,6 +55,7 @@
             <label>Orders Found</label>
         </rules>
     </decisions>
+    <environments>Default</environments>
     <interviewLabel>Account-AfterUpdate-UpdateContactOrdersPrimaryContact {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account-AfterUpdate-UpdateContactOrdersPrimaryContact</label>
     <loops>
@@ -223,7 +224,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>OrderCollection</name>
         <dataType>SObject</dataType>
