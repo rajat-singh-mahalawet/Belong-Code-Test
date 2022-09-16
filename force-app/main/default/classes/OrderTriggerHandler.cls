@@ -1,7 +1,7 @@
 public with sharing class OrderTriggerHandler {
 
     public static void execute(){
-        if(Trigger.isAfter){
+        if(Trigger.isBefore){
             if(Trigger.isInsert){
                 linkPrimaryContact(Trigger.New);
                 
@@ -12,7 +12,7 @@ public with sharing class OrderTriggerHandler {
     }
 
     private static void linkPrimaryContact(List<Order> orderList){
-        List<Order> OrdersToBeUpdated       = new List<Order>();
+        // List<Order> OrdersToBeUpdated       = new List<Order>();
 
         Set<Id> accountIds                  = new Set<Id>();
         for(Order o : orderList){
@@ -25,13 +25,13 @@ public with sharing class OrderTriggerHandler {
             for(Account linkedaccount: linkedAccounts){
                 if(o.AccountId != null && o.AccountId == linkedaccount.Id){
                     o.Primary_Contact__c = linkedaccount.Primary_Contact__c;
-                    OrdersToBeUpdated.add(o);
+                    // OrdersToBeUpdated.add(o);
                 }
             }
         }
-        if(!OrdersToBeUpdated.isEmpty()){
-            Database.update(OrdersToBeUpdated);
-        }
+        // if(!OrdersToBeUpdated.isEmpty()){
+        //     Database.update(OrdersToBeUpdated);
+        // }
 
     }
 
